@@ -5,9 +5,9 @@
 }
 
 .extended-forecast .main-content{
-  background-image: linear-gradient(to bottom, blue, orange 60%);
+  background-image: linear-gradient(to bottom, #11024a 20%, #340c3e 25%, #a74508 80%);
   border-bottom: 2px solid black;
-  flex: 4;
+  flex: 5;
 }
 
 .extended-forecast .footer{
@@ -15,5 +15,5 @@
   border-top: 4px solid white;
   font-size: 4rem;
   flex: 1;
-  padding: 0 20px;
+  padding: 0 100px;
 }
