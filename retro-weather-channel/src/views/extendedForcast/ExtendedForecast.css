@@ -12,6 +12,12 @@
   flex-direction: column;
 }
 
+.extended-forecast .header-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end ;
+}
+
 .extended-forecast .footer{
   background-color: #213076;
   border-top: 4px solid white;
@@ -30,4 +36,9 @@
 .header-section {
   flex: 1;
   display: flex;
+}
+
+.header-spacer {
+  flex: 1;
+  height: 0px;
 }

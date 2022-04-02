@@ -8,6 +8,10 @@
   src: local('Star3000Extended'), url(./fonts/Star3000Extended.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Star3000Heavy';
+  src: local('Star3000Heavy'), url(./fonts/Star3000Heavy.ttf) format('truetype');
+}
 
 #root {
   height: 100%;
@@ -44,6 +48,7 @@ code {
   background-size: 100% 5px, 2px 100%;
   pointer-events: none;
   min-width: 800px;
+  z-index: 999;
 }
 
 .crt::after {
@@ -58,4 +63,5 @@ code {
   opacity: 0;
   z-index: 2;
   pointer-events: none;
+  z-index: 999;
 }

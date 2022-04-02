@@ -1,0 +1,37 @@
+.extended-forecast-header {
+  display: flex;
+  width: 100%;
+  font-size: 1.8rem;
+  flex: 5;
+}
+
+.extended-forecast-header-primary-text {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.location-text {
+  display: flex;
+}
+
+.extended-forecast-title-text {
+  display: flex;
+  color: yellow;
+}
+
+.extended-forecast-header-secondary-text {
+  font-family: 'Star3000Extended';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.time-text {
+
+}
+
+.date-text {
+
+}
