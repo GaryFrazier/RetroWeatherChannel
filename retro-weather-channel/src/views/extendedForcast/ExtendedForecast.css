@@ -21,24 +21,32 @@
 .extended-forecast .footer{
   background-color: #213076;
   border-top: 4px solid white;
-  font-size: 4rem;
+  font-size: 3rem;
   flex: 1;
-  padding: 0 100px;
+  display: flex;
 }
 
-.panel-section {
+.extended-forecast .footer-spacer{
+  flex: 1;
+}
+
+.extended-forecast .footer-value{
+  flex: 5;
+}
+
+.extended-forecast .panel-section {
   flex: 4;
   display: flex;
   justify-content: center;
   margin: 0 20px 20px 20px;
 }
 
-.header-section {
+.extended-forecast .header-section {
   flex: 1;
   display: flex;
 }
 
-.header-spacer {
+.extended-forecast .header-spacer {
   flex: 1;
   height: 0px;
 }

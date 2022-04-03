@@ -10,7 +10,7 @@ function Header() {
             <span className="extended-forecast-title-text">Extended Forecast</span>
         </div>
         <div className="extended-forecast-header-secondary-text">
-            <span className="time-text">7:49:03 PM</span>
+            <span className="time-text">12:49:03 PM</span>
             <span className="date-text">TUE NOV 5</span>
         </div>
     </div>

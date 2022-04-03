@@ -18,7 +18,11 @@ function ExtendedForecast() {
           </div>
         </div>
         <div className='footer'>
-          Clear
+          <div className='footer-spacer' />
+          <div className='footer-value'>
+            Clear
+          </div>
+          <div className='footer-spacer' />
         </div>
     </div>
   );

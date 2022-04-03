@@ -8,6 +8,7 @@
 .extended-forecast-header-primary-text {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   margin: 20px;
 }
 .location-text {
@@ -23,9 +24,10 @@
   font-family: 'Star3000Extended';
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   font-size: 1rem;
   letter-spacing: 5px;
+  margin-bottom: 20px;
 }
 
 .time-text {
