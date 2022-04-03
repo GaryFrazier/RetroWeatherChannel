@@ -9,7 +9,7 @@ function Panel() {
                     THU
                 </div>
                 <div className="weather-icon-container">
-
+                    <img src="/CC_Rain.gif" />
                 </div>
                 <div className="weather-status-container">
                     PARTLY CLOUDY

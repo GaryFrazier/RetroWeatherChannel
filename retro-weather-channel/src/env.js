@@ -1,0 +1,1 @@
+export const API_TOKEN="0098b837f2cb19488b2412eae98500a7" // make a back end api and secure this key if I ever start using non free version

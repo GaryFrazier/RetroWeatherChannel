@@ -39,6 +39,11 @@
   justify-content: center;
 }
 
+.weather-icon-container img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
 .weather-status-container {
   display: flex;
   justify-content: center;
