@@ -24,6 +24,7 @@
   font-size: 3rem;
   flex: 1;
   display: flex;
+  align-items: center;
 }
 
 .extended-forecast .footer-spacer{
@@ -49,4 +50,47 @@
 .extended-forecast .header-spacer {
   flex: 1;
   height: 0px;
+}
+
+@media(max-width: 1000px) and (min-width: 590px) {
+  .extended-forecast {
+    zoom: 0.75;
+  }
+
+  .extended-forecast .header-section {
+    margin: 0 20px;
+  }
+
+  .extended-forecast .header-spacer {
+   display: none;
+  }
+}
+
+@media(max-width: 590px) {
+  .extended-forecast .main-content {
+    flex: 8;
+  }
+
+  .extended-forecast .header-section {
+    flex: 1;
+    margin: 0 20px;
+  }
+
+  .extended-forecast .panel-section {
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 8;
+  }
+
+  .extended-forecast .footer {
+    flex: 1;
+  }
+
+  .extended-forecast .header-spacer {
+    display: none;
+  }
+
+  .footer-value {
+    font-size: 2rem;
+  }
 }

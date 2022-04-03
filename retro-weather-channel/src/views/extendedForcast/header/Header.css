@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: flex-end;
   margin: 20px;
+  flex: 1;
 }
 .location-text {
   display: flex;
@@ -31,9 +32,35 @@
 }
 
 .time-text {
-
+  margin-right: 25px;
+  text-align: end;
 }
 
 .date-text {
+  margin-right: 25px;
+  text-align: end;
+}
 
+@media(max-width: 590px) {
+  .extended-forecast-header {
+    margin-top: 20px;
+  }
+
+  .extended-forecast-header-primary-text {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .extended-forecast-header-secondary-text {
+    font-size: 0.75rem;
+    margin: 0 10px;
+  }
+
+  .time-text {
+    margin-right: 0;
+  }
+  
+  .date-text {
+    margin-right: 0;
+  }
 }

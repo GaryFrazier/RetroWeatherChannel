@@ -7,9 +7,9 @@ function ExtendedForecast() {
     <div className="extended-forecast">
         <div className='main-content'>
           <div className='header-section'>
-            <div class="header-spacer"/>
+            <div className="header-spacer"/>
             <Header />
-            <div class="header-spacer"/>
+            <div className="header-spacer"/>
           </div>
           <div className='panel-section'>
             <Panel />

@@ -4,7 +4,7 @@ import Logo from '../../shared/logo/Logo'
 function Header() {
   return (
     <div className="extended-forecast-header">
-        <Logo />
+        <Logo/>
         <div className="extended-forecast-header-primary-text">
             <span className="location-text">Miami, FLorida</span>
             <span className="extended-forecast-title-text">Extended Forecast</span>
