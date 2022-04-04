@@ -40,7 +40,7 @@ const ExtendedForecast = () => {
     }
   });
 
-  if (!data?.lat) return;
+  if (!data?.lat) return <div className="extended-forecast"><div className='main-content loading'>Loading...</div></div>;
 
   const day1 = data.daily[0];
   day1.day = moment().local().format('ddd');
