@@ -3,9 +3,26 @@ import React, { useEffect } from 'react';
 import Panel from './panel/Panel'
 import Header from './header/Header'
 import axios from 'axios';
-import { API_TOKEN } from '../../env';
+import { API_TOKEN, GEOCODE_TOKEN } from '../../env';
 import moment from 'moment';
 
+const miamiLat = 25.7617;
+const miamiLong = -80.1918;
+
+const getLocationData = async (lat, long, setData) => {
+  const res = await axios
+    .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
+    
+  console.log(res.data);
+
+  const geoData = await axios
+    .get(`https://us1.locationiq.com/v1/reverse.php?key=${GEOCODE_TOKEN}&lat=${lat}&lon=${long}&format=json`)
+
+  console.log(geoData.data);
+  res.data.city = geoData.data.address.city;
+  res.data.state = geoData.data.address.state;
+  setData(res.data);
+}
 const ExtendedForecast = () => {
   const [data, setData] = React.useState([])
 
@@ -14,29 +31,13 @@ const ExtendedForecast = () => {
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(pos => {
-        axios
-          .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
-          .then((res) => {
-            console.log(res.data)
-            setData(res.data)
-          })
+        getLocationData(pos.coords.latitude, pos.coords.longitude, setData); 
       }, () => {
-        axios
-        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
-        .then((res) => {
-          console.log(res.data)
-          setData(res.data)
-        });
+        getLocationData(miamiLat, miamiLong, setData);
       });
     } else {
-      axios
-        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
-        .then((res) => {
-          console.log(res.data)
-          setData(res.data)
-        });
+      getLocationData(miamiLat, miamiLong, setData);
     }
-    
   });
 
   if (!data?.lat) return;
@@ -54,7 +55,7 @@ const ExtendedForecast = () => {
         <div className='main-content'>
           <div className='header-section'>
             <div className="header-spacer"/>
-            <Header city={"city"} country={"country"}/>
+            <Header city={data.city} state={data.state}/>
             <div className="header-spacer"/>
           </div>
           <div className='panel-section'>

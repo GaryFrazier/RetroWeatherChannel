@@ -1,1 +1,2 @@
 export const API_TOKEN="0098b837f2cb19488b2412eae98500a7" // make a back end api and secure this key if I ever start using non free version
+export const GEOCODE_TOKEN="pk.73cdfdc768b9e4ea15581fd2cb479dfe" //same when not free

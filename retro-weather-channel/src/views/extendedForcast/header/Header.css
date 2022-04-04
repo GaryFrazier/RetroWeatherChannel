@@ -14,6 +14,7 @@
 }
 .location-text {
   display: flex;
+  white-space: nowrap;
 }
 
 .extended-forecast-title-text {
@@ -52,7 +53,7 @@
   }
 
   .extended-forecast-header-secondary-text {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     margin: 0 10px;
   }
 

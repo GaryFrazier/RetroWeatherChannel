@@ -10,4 +10,6 @@
   color: white;
   border-color: #a74508;
   z-index: 200;
+
+  display: none;
 }
