@@ -15,14 +15,14 @@ const ExtendedForecast = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(pos => {
         axios
-          .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}`)
+          .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
           .then((res) => {
             console.log(res.data)
             setData(res.data)
           })
       }, () => {
         axios
-        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}`)
+        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
         .then((res) => {
           console.log(res.data)
           setData(res.data)
@@ -30,7 +30,7 @@ const ExtendedForecast = () => {
       });
     } else {
       axios
-        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}`)
+        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${25.7617}&lon=${-80.1918}&exclude=current,minutely,hourly&units=imperial&appid=${API_TOKEN}&timestamp=${new Date().getDay()}`)
         .then((res) => {
           console.log(res.data)
           setData(res.data)
@@ -48,6 +48,7 @@ const ExtendedForecast = () => {
   const day3 = data.daily[2];
   day3.day = moment().local().add(2, 'days').format('ddd');
 
+  const alertText = data.alerts ? data.alerts[0]?.description : "No current weather advisory alerts, have a nice day!";
   return (
     <div className="extended-forecast">
         <div className='main-content'>
@@ -63,11 +64,9 @@ const ExtendedForecast = () => {
           </div>
         </div>
         <div className='footer'>
-          <div className='footer-spacer' />
           <div className='footer-value'>
-            Clear
+            <marquee>{alertText}</marquee>
           </div>
-          <div className='footer-spacer' />
         </div>
     </div>
   );

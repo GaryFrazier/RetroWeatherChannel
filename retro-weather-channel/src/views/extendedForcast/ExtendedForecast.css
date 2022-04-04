@@ -33,6 +33,7 @@
 
 .extended-forecast .footer-value{
   flex: 5;
+  font-size: 2rem;
 }
 
 .extended-forecast .panel-section {
